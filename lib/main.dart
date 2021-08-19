@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hospitalApp/global.dart' as g;
-import 'package:hospitalApp/screens/login.dart';
+import 'package:hospitalApp/screens/landing.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,6 +28,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return LoginPage();
+    return LandingPage();
   }
 }

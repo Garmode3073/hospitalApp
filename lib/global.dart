@@ -23,3 +23,4 @@ Color background = Color(0xffE1D1FF);
 Color shadow = Color(0xffB499FC);
 Color contbg = Color(0xffE7E0F9);
 Color button = Color(0xffBDAAF1);
+Color contbg2 = Color(0xffE1D1FF);
