@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hospitalApp/components/background.dart';
 import 'package:hospitalApp/components/listcont.dart';
 import 'package:hospitalApp/global.dart' as g;
+import 'package:hospitalApp/screens/landing.dart';
+import 'package:page_transition/page_transition.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key key}) : super(key: key);
@@ -17,6 +19,42 @@ class _ProfilePageState extends State<ProfilePage> {
     g.width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: g.background,
+      drawer: Drawer(
+        child: Container(
+          color: g.shadow,
+          child: Column(
+            children: [
+              UserAccountsDrawerHeader(
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      'https://images.unsplash.com/photo-1551464885-21348ccc8b67?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80'),
+                  backgroundColor: g.background,
+                ),
+                accountName: Text('Hospital name'),
+                accountEmail: Text('Hospital Email Address'),
+              ),
+              ListTile(
+                tileColor: g.background,
+                title: Text('Booking Details'),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.pop(context);
+                },
+              ),
+              Expanded(child: Container()),
+              ListTile(
+                tileColor: g.background,
+                title: Text('Sign out'),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.pop(context);
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
       body: Stack(
         children: [
           Positioned(

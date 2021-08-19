@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hospitalApp/components/textfields.dart';
 import 'package:hospitalApp/global.dart' as g;
+import 'package:hospitalApp/screens/landing.dart';
 import 'package:hospitalApp/screens/loading.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:string_validator/string_validator.dart';
 import 'package:hospitalApp/components/background.dart';
 
@@ -45,7 +47,15 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   Center(
                     child: RawMaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          PageTransition(
+                            type: PageTransitionType.topToBottom,
+                            child: LandingPage(),
+                          ),
+                        );
+                      },
                       child: Container(
                         margin: EdgeInsets.only(top: g.height * 0.4),
                         width: g.width * 0.8,
