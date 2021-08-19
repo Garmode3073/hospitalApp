@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:hospitalApp/global.dart' as g;
 
 class LoadingPage extends StatefulWidget {
   const LoadingPage({Key key}) : super(key: key);
@@ -10,6 +12,34 @@ class LoadingPage extends StatefulWidget {
 class _LoadingPageState extends State<LoadingPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    g.height = MediaQuery.of(context).size.height;
+    g.width = MediaQuery.of(context).size.width;
+    return Scaffold(
+      backgroundColor: g.primary,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Expanded(child: Container()),
+            SpinKitDualRing(
+              color: g.background,
+              size: 100.0,
+            ),
+            SizedBox(
+              height: 21,
+            ),
+            Text(
+              'Loading...',
+              style: TextStyle(
+                fontFamily: 'Lucida Bright',
+                fontSize: 30,
+                color: g.background,
+              ),
+            ),
+            Expanded(child: Container()),
+          ],
+        ),
+      ),
+    );
   }
 }
