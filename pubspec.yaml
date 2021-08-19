@@ -31,7 +31,6 @@ dependencies:
   flutter_spinkit: "^4.1.2"
   provider: ^4.3.3
   string_validator: any
-  adobe_xd: any
 
 dev_dependencies:
   flutter_test:
